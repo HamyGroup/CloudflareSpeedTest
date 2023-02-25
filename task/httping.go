@@ -47,7 +47,7 @@ func (p *Ping) httping(ip *net.IPAddr) (int, time.Duration) {
 
 		//fmt.Println("IP:", ip, "StatusCode:", resp.StatusCode, resp.Request.URL)
 		if HttpingStatusCode == 0 || HttpingStatusCode < 100 && HttpingStatusCode > 599 {
-			if resp.StatusCode != 200 && resp.StatusCode != 301 && resp.StatusCode != 302 {
+			if resp.StatusCode != 200 && resp.StatusCode != 301 && resp.StatusCode != 302 && resp.StatusCode != 403 {
 				return 0, 0
 			}
 		} else {
